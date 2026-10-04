@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Análise de Acidentes de Trânsito no Brasil</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .identificacao {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .botoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .destaque {
+            background: #e8f0fe;
+            border-left: 5px solid #2563eb;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🚗 Análise de Acidentes de Trânsito no Brasil</h1>
+
+        <p>
+            Projeto acadêmico de análise de dados com Python,
+            visualizações e dashboard interativo em Streamlit.
+        </p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- IDENTIFICAÇÃO -->
+
+        <section>
+
+            <h2>Identificação</h2>
+
+            <div class="identificacao">
+
+                <p><strong>Discente:</strong> Laura Ribeiro Mota</p>
+
+                <p><strong>RA:</strong> 1016012</p>
+
+                <p><strong>Disciplina:</strong> Linguagens de Programação</p>
+
+                <p><strong>Docente:</strong> Alexandre Neves Louzada</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE O PROJETO -->
+
+        <section>
+
+            <h2>Sobre o projeto</h2>
+
+            <p>
+                Este projeto realiza uma análise exploratória de uma base
+                simulada de acidentes de trânsito no Brasil entre os anos
+                de 2015 e 2024.
+            </p>
+
+            <br>
+
+            <p>
+                O objetivo é identificar padrões temporais, geográficos
+                e relacionados às características das ocorrências,
+                utilizando técnicas de análise de dados e visualização.
+            </p>
+
+        </section>
+
+
+        <!-- OBJETIVOS -->
+
+        <section>
+
+            <h2>Principais análises</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>📍 Análise regional</h3>
+                    <p>
+                        Comparação da quantidade de acidentes entre
+                        regiões e estados brasileiros.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Evolução temporal</h3>
+                    <p>
+                        Análise da evolução das ocorrências entre
+                        os anos de 2015 e 2024.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>⚠️ Gravidade</h3>
+                    <p>
+                        Identificação dos tipos de acidente e períodos
+                        associados aos registros graves e críticos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌧️ Condições climáticas</h3>
+                    <p>
+                        Investigação da relação entre volume de chuva
+                        e quantidade de acidentes.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+
+        <section>
+
+            <h2>Indicadores analisados</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total de acidentes</h3>
+                    <p>
+                        Soma das ocorrências presentes na base analisada.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Total de mortes</h3>
+                    <p>
+                        Quantidade total de mortes registradas.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Estado mais crítico</h3>
+                    <p>
+                        Estado com maior volume de acidentes.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Índice de gravidade</h3>
+                    <p>
+                        Indicador calculado a partir dos níveis
+                        de gravidade das ocorrências.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECNOLOGIAS -->
+
+        <section>
+
+            <h2>Tecnologias utilizadas</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>🐍 Python</h3>
+                    <p>
+                        Linguagem principal utilizada no projeto.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Pandas</h3>
+                    <p>
+                        Manipulação e análise dos dados.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📈 Plotly</h3>
+                    <p>
+                        Criação dos gráficos interativos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Streamlit</h3>
+                    <p>
+                        Desenvolvimento do dashboard interativo.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📓 Jupyter</h3>
+                    <p>
+                        Desenvolvimento da análise exploratória.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🐙 GitHub</h3>
+                    <p>
+                        Versionamento, documentação e publicação.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section>
+
+            <h2>Dashboard interativo</h2>
+
+            <div class="destaque">
+
+                <p>
+                    O dashboard permite aplicar filtros por ano, mês,
+                    região, estado, cidade, tipo de acidente e nível
+                    de gravidade.
+                </p>
+
+                <br>
+
+                <p>
+                    Os indicadores, gráficos, tabelas e interpretações
+                    são atualizados automaticamente conforme os filtros
+                    selecionados.
+                </p>
+
+                <div class="botoes">
+
+                    <a
+                        href="#"
+                        class="botao"
+                        id="dashboard-link"
+                    >
+                        Abrir Dashboard
+                    </a>
+
+                    <a
+                        href="#"
+                        class="botao"
+                        id="github-link"
+                    >
+                        Ver no GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OBSERVAÇÃO -->
+
+        <section>
+
+            <h2>Observação</h2>
+
+            <p>
+                A base de dados utilizada neste projeto é simulada
+                e possui finalidade exclusivamente acadêmica.
+            </p>
+
+            <br>
+
+            <p>
+                Portanto, os resultados apresentados não devem ser
+                interpretados como estatísticas oficiais sobre
+                acidentes de trânsito no Brasil.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Projeto acadêmico desenvolvido por
+            <strong>Laura Ribeiro Mota</strong>
+        </p>
+
+        <p>
+            Linguagens de Programação — Alexandre Neves Louzada
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
